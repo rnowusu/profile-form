@@ -1,7 +1,7 @@
 console.log("Hello from edit profiles controller.js");
 application.controller('EditProfilesController', ['$scope', '$routeParams', '$location', 'editProfileService', function($scope, $routeParams, $location, editProfileService){
 
-  $scope.changeProfile = editProfile.editProfile('api/profiles/'+$routeParams.id).then(function(data){
+  $scope.changeProfile = editProfileService.editProfile('api/profiles/'+$routeParams.id).then(function(data){
     $scope.editProfile = data.data;
     $scope.editProfile.date_of_birth = new Date($scope.editProfile.date_of_birth)
     console.log(data.data);
@@ -87,5 +87,8 @@ application.controller('EditProfilesController', ['$scope', '$routeParams', '$lo
 
       }
     }
+
+    $scope.games = games;
+    $scope.countries = countries;
 
 }]);

@@ -12,21 +12,41 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <!-- Angular Module -->
     <script src="./angular/module.js" charset="utf-8"></script>
+
     <!-- Angular Controllers -->
     <script src="./angular/controllers/get_profiles_controller.js" charset="utf-8"></script>
     <script src="./angular/controllers/create_profiles_controller.js" charset="utf-8"></script>
     <script src="./angular/controllers/edit_profiles_controller.js" charset="utf-8"></script>
-
     <!-- Angular services -->
     <script src="./angular/services/create_profile_service.js" charset="utf-8"></script>
     <script src="./angular/services/edit_profile_service.js" charset="utf-8"></script>
     <script src="./angular/services/get_profile_service.js" charset="utf-8"></script>
     <!-- Angular directives -->
+    <script src="./angular/directives/javascripts/file_model.js" charset="utf-8"></script>
+      <!-- Create directives -->
+    <script src="./angular/directives/javascripts/create_profile_directives/create_about.js" charset="utf-8"></script>
+    <script src="./angular/directives/javascripts/create_profile_directives/create_basic_info.js" charset="utf-8"></script>
+    <script src="./angular/directives/javascripts/create_profile_directives/create_profile_form.js" charset="utf-8"></script>
+    <script src="./angular/directives/javascripts/create_profile_directives/create_social_media.js" charset="utf-8"></script>
+    <script src="./angular/directives/javascripts/create_profile_directives/create_summary.js" charset="utf-8"></script>
+      <!-- Edit Directives -->
+    <script src="./angular/directives/javascripts/edit_profile_directives/edit_about.js" charset="utf-8"></script>
+    <script src="./angular/directives/javascripts/edit_profile_directives/edit_basic_info.js" charset="utf-8"></script>
+    <script src="./angular/directives/javascripts/edit_profile_directives/edit_profile_form.js" charset="utf-8"></script>
+    <script src="./angular/directives/javascripts/edit_profile_directives/edit_social_media.js" charset="utf-8"></script>
+    <script src="./angular/directives/javascripts/edit_profile_directives/edit_summary.js" charset="utf-8"></script>
+    <script src="./angular/directives/javascripts/create_profile_directives/get_profiles.js" charset="utf-8"></script>
   </head>
   <body ng-app="myApp">
     Hello World! From index.html :)
     <div class="">
+      <!-- <create-about></create-about> -->
+      <!-- <get-profiles></get-profiles> -->
       <ng-view></ng-view>
+      <!-- <create-basic-info></create-basic-info><br>
+      <create-about ></create-about><br>
+      <create-social-media ></create-social-media><br>
+      <create-summary ></create-summary> <br> -->
     </div>
   </body>
 </html>

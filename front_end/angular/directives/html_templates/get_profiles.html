@@ -1,0 +1,47 @@
+<div class="container profiles">
+
+  <div class="jumbotron">
+
+    <h2 class="text-center"> All Profiles </h2> <br>
+
+    <div class="profile text-center" ng-repeat="profile in profiles">
+
+      <!-- <h2>Summary:</h2> -->
+      <br>
+      <h3>
+        {{ profile.name }}
+        &nbsp;
+        <!-- <img src="{{profile.profileImage}}" class="img-thumbnail img-responsive" style="width:7%;" alt=""> -->
+      </h3>
+      <span class="profile-category"></span>Name: &nbsp; {{ profile.name }} <br>
+      <span class="profile-category"></span>Sport: &nbsp; {{ profile.sports }} <br>
+      <span class="profile-category"></span>Nationality: &nbsp; {{ profile.nationality }} <br>
+      <span class="profile-category"></span>Gender: &nbsp; {{ profile.gender }} <br>
+      <span class="profile-category"></span>Date  of Birth: &nbsp;{{ profile.date_of_birth | date }} <br>
+      <span class="profile-category"></span>Description: &nbsp; {{ profile.description }} <br>
+      <span class="profile-category"></span>Location: &nbsp; {{ profile.location }} <br>
+      <span class="profile-category"></span>Team: &nbsp; {{ profile.team }} <br>
+      <span class="profile-category"></span>Social Media Handles: <br>
+      <span class="profile-category" ng-hide="profile.social_media_handles.facebook == null">Facebook:&nbsp; {{ profile.social_media_handles.facebook }}<br> </span>
+      <span class="profile-category" ng-hide="profile.social_media_handles.twitter == null">Twitter:&nbsp; {{ profile.social_media_handles.twitter }}<br> </span>
+      <span class="profile-category" ng-hide="profile.social_media_handles.instagram == null">Instagram:&nbsp; {{ profile.social_media_handles.instagram }}<br> </span>
+      <span class="profile-category" ng-hide="profile.social_media_handles.youtube == null">Youtube:&nbsp; {{ profile.social_media_handles.youtube }}<br> </span>
+      <span class="profile-category" ng-hide="profile.social_media_handles.twitch == null">Twitch:&nbsp; {{ profile.social_media_handles.twitch }}<br> </span>
+      <span class="profile-category" ng-hide="profile.social_media_handles.snapchat == null">Snapchat:&nbsp; {{ profile.social_media_handles.snapchat }}<br> </span>
+      <span class="profile-category"></span>Drinks  Alcohol?:&nbsp; {{ profile.drinks_alcohol }} <br>
+      <span class="profile-category"></span>Married?: &nbsp; {{ profile.married }} <br>
+      <span class="profile-category"></span>Pets?: &nbsp; {{ profile.pets }} <br><br>
+      <a href="#/edit-profile/{{profile._id}}" class="btn btn-info btn-sm">Edit Profile</a>
+
+      <!-- New Profile: {{ profile }}
+      <br>
+      <br>
+      <button type="button" name="button" ng-click="submitProfile()">Submit New Profile</button> -->
+
+    </div>
+    <br>
+    <a href="#/create-profile/basic-info" role="button" class="btn btn-primary btn-sm float-right">Create Profile!</a>
+
+  </div>
+
+</div>

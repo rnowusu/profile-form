@@ -1,0 +1,39 @@
+<!-- Summary: show the athlete a wrap-up screen with the info they added, and give them a way to go back and edit if there are any mistake -->
+<div class="form-step container">
+
+  <div class="row">
+    <div class="col-lg-8 col-md-8 col-sm-10 col-xs-12">
+
+      <h3>Summary:</h3>
+      <!-- <br> -->
+      Name: &nbsp; {{ newProfile.name }} <br>
+      Sport: &nbsp; {{ newProfile.sports }} <br>
+      Nationality: &nbsp; {{ newProfile.nationality }} <br>
+      Gender: &nbsp; {{ newProfile.gender }} <br>
+      Date  &nbsp;of Birth: {{ newProfile.date_of_birth | date }} <br>
+      Description: &nbsp; {{ newProfile.description }} <br>
+      Location: &nbsp; {{ newProfile.location }} <br>
+      Team: &nbsp; {{ newProfile.team }} <br>
+      Social  &nbsp;Media Handles: <br>
+      Facebook: &nbsp; {{ newProfile.social_media_handles.facebook }} <br>
+      Twitter: &nbsp; {{ newProfile.social_media_handles.twitter }} <br>
+      Instagram: &nbsp; {{ newProfile.social_media_handles.instagram }} <br>
+      Youtube: &nbsp; {{ newProfile.social_media_handles.youtube }} <br>
+      Twitch: &nbsp; {{ newProfile.social_media_handles.twitch }} <br>
+      Snapchat: &nbsp; {{ newProfile.social_media_handles.snapchat }} <br>
+      Drinks  &nbsp;Alcohol?: {{ newProfile.drinks_alcohol }} <br>
+      Married? &nbsp;: {{ newProfile.married }} <br>
+      Pets? &nbsp;: {{ newProfile.pets }} <br>
+
+      New Profile: {{ newProfile }}
+      <br>
+      <br>
+      <a href="#/profiles" role="button" class="btn btn-primary btn-sm">Back to profiles</a>
+      <button type="button" name="button" class="btn btn-primary btn-sm" ng-click="back(newProfile)">Back</button>
+      <button type="button" name="button" class="btn btn-primary btn-sm" ng-click="next(newProfile)">Next</button>
+      <button type="button" name="button" class="btn btn-success btn-sm" ng-click="submitProfile()">Submit New Profile</button>
+
+    </div>
+  </div>
+
+</div>

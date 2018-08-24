@@ -1,0 +1,39 @@
+<!-- Social Media: handles (Facebook, Twitter, Instagram, Youtube, Twitch, Snapchat)-->
+<div class="form-step container">
+  <div class="row">
+    <div class="col-lg-8 col-md-8 col-sm-10 col-xs-12">
+
+      <h3 class="text-center">Edit {{editProfile.name}}'s Social Media Handles</h3><br>
+      <label for="">Facebook:
+        <input type="text" name="" value="" placeholder="Enter Facebook name" ng-model="editProfile.social_media_handles.facebook">
+      </label><br><br>
+      <label for="">Twitter:
+        <input type="text" name="" value="" placeholder="Enter Twitter handle" ng-model="editProfile.social_media_handles.twitter">
+      </label><br><br>
+      <label for="">Instagram:
+        <input type="text" name="" value="" placeholder="Enter Instagram handle" ng-model="editProfile.social_media_handles.instagram">
+      </label><br><br>
+      <label for="">Youtube:
+        <input type="text" name="" value="" placeholder="Enter Youtube handle" ng-model="editProfile.social_media_handles.youtube">
+      </label><br><br>
+      <label for="">Twitch:
+        <input type="text" name="" value="" placeholder="Enter Twitch handle" ng-model="editProfile.social_media_handles.twitch">
+      </label><br><br>
+      <label for="">Snapchat:
+        <input type="text" name="" value="" placeholder="Enter Snapchat handle" ng-model="editProfile.social_media_handles.snapchat">
+      </label><br><br>
+
+      <!-- New Profile: {{ editProfile }} <br><br><br> -->
+
+      <!-- <a href="#/edit-profile/about" role="button">Back to About</a> -->
+      <!-- &nbsp; -->
+      <!-- <a href="#/edit-profile/summary" role="button">Summary</a> -->
+      <a href="#/profiles" role="button" class="btn btn-primary btn-sm">Back to profiles</a>
+      <button type="button" name="button" ng-click="editBack(editProfile)" class="btn btn-primary btn-sm">Back</button>
+      <button type="button" name="button" ng-click="editNext(editProfile)" class="btn btn-primary btn-sm">Next</button>
+      <!-- Trying to make SocialMedia an array:
+      {{ Object.values(editProfile.social_media_handles) }} -->
+
+    </div>
+  </div>
+</div>

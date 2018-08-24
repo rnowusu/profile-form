@@ -1,0 +1,12 @@
+<!-- <basic-info></basic-info> <br>
+<about></about> <br>
+<social-media></social-media> -->
+
+<form class="jumbotron" action="index.html" method="post" ng-switch="switch">
+
+  <create-basic-info countries="countries" sports="games" ng-switch-when="basic-info"></create-basic-info><br>
+  <create-about ng-switch-when="about"></create-about><br>
+  <create-social-media ng-switch-when="social_media"></create-social-media><br>
+  <create-summary ng-switch-when="summary"></create-summary> <br> <br>
+
+</form>

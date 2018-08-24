@@ -1,0 +1,12 @@
+<div class="container">
+
+  <form class="jumbotron" action="index.html" method="post" ng-switch="editSwitch">
+
+    <edit-basic-info ng-switch-when="basic-info"></edit-basic-info> <br>
+    <edit-about ng-switch-when="about"></edit-about> <br>
+    <edit-social-media ng-switch-when="social_media"></edit-social-media> <br>
+    <edit-summary ng-switch-when="summary"></edit-summary>
+
+  </form>
+
+</div>

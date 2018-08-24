@@ -1,3 +1,4 @@
+console.log("Hello from edit profiles controller.js");
 application.controller('EditProfilesController', ['$scope', '$routeParams', '$location', 'editProfileService', function($scope, $routeParams, $location, editProfileService){
 
   $scope.changeProfile = editProfile.editProfile('api/profiles/'+$routeParams.id).then(function(data){

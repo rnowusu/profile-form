@@ -1,7 +1,7 @@
 application.factory('createProfileService', ['$http', function($http){
-  console.log("Attempting to create profile.");
-  console.log(this);
-  
+  // console.log("Attempting to create profile.");
+  // console.log(this);
+
   let ProfileService = {};
   ProfileService.createProfile = function(url, data){
     let _data = data || {};

@@ -1,0 +1,67 @@
+<!-- About: description, location, team etc -->
+
+<h3>About</h3>
+<div class="form-step container" >
+  <div class="row">
+    <div class="col-lg-8 col-md-8 col-sm-10 col-xs-12">
+
+      <label for="form-label">
+        Description:
+        <input type="text" name="" value="" placeholder="Talk about yourself" ng-model="newProfile.description">
+      </label> <br><br>
+
+      <label for="form-label">
+        About:<br>
+        <textarea name="name" rows="8" cols="80" placeholder="Talk about yourself" ng-model="newProfile.about"></textarea>
+        <!-- <input type="text" name="" value="" placeholder="Talk about yourself" ng-model="newProfile.description"> -->
+      </label> <br><br>
+
+      <label for="form-label">
+        Interests:
+        <input type="text" name="" value="" placeholder="Talk about yourself" ng-model="newProfile.interests">
+      </label> <br><br>
+
+      <label for="form-label">
+        Charities:
+        <input type="text" name="" value="" placeholder="Talk about yourself" ng-model="newProfile.charities">
+      </label> <br><br>
+
+      <label for="form-label">
+        Location:
+        <input type="text" name="" value="" placeholder="Enter your Location" ng-model="newProfile.location">
+      </label> <br> <br>
+
+      <label for="">Team:
+        <input type="text" name="" value="" placeholder="Enter your Team" ng-model="newProfile.team">
+      </label> <br><br>
+
+      <label for="">Pets: <br>
+        true  <input type="radio" name="pets" ng-value="true" ng-model="newProfile.pets">
+        false  <input type="radio" name="pets" ng-value="false" ng-model="newProfile.pets">
+      </label> <br> <br>
+
+      <label for="">Drink Alcohol?: <br>
+        true  <input type="radio" name="drinks_alcohol" ng-value="true" ng-model="newProfile.drinks_alcohol">
+        false  <input type="radio" name="drinks_alcohol" ng-value="false" ng-model="newProfile.drinks_alcohol">
+      </label> <br> <br>
+
+      <label for="">Married?: <br>
+        true  <input type="radio" name="married" ng-value="true" ng-model="newProfile.married">
+        false  <input type="radio" name="married" ng-value="false" ng-model="newProfile.married">
+      </label> <br> <br>
+
+
+
+      New Profile: {{ newProfile }}
+
+      <br>
+      <!-- <a href="#/create-profile/basic-info" role="button">Back to Basic Info</a> -->
+      <!-- &nbsp; -->
+      <!-- <a href="#/create-profile/social_media" role="button">Next</a> -->
+      <a href="#/profiles" role="button" class="btn btn-primary btn-sm">Back to profiles</a>
+      <button type="button" name="button" class="btn btn-primary btn-sm" ng-click="back(newProfile)">Back</button> <button type="button" name="button" class="btn btn-primary btn-sm" ng-click="next(newProfile)">Next</button>
+
+    </div>
+  </div>
+
+</div>

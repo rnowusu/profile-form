@@ -1,0 +1,96 @@
+<!--  Basic Info: name, sport, nationality, gender, date of birth -->
+
+<div class="form-step container">
+  <div class="row">
+    <div class="col-lg-10 col-md-10 col-sm-11 col-xs-12">
+
+      <h3>Basic Info</h3>
+
+      <label class="form-label">
+        Name: &nbsp;
+      </label>
+        <input class="form-control" type="text" name="" value="" ng-model="newProfile.name">
+      <br><br>
+
+      <label class="form-label">
+        Sports: &nbsp; &nbsp; &nbsp;
+      </label>
+        <input class="form-control" type="text" name="" value="" ng-model="newProfile.sports">
+      <br><br>
+
+
+      <label class="form-label">
+        Date of Birth: &nbsp;
+      </label>
+        <input class="form-control" type="date" name="" value="" placeholder="Enter in mm/dd/yyyy Format" ng-model="newProfile.date_of_birth">
+      <br><br>
+
+      <label for="">
+        Association &nbsp;
+        <select class="form-select" name="" ng-model="newProfile.association">
+          <option value="select" disabled selected> Select an Option</option>
+          <option value="NBA">NBA</option>
+          <option value="WNBA">WNBA</option>
+          <option value="NFL">NFL</option>
+          <option value="MLB">MLB</option>
+          <option value="MLS">MLS</option>
+          <option value="UWS">UWS</option>
+          <option value="MLL">MLL</option>
+          <option value="NHL">NHL</option>
+          <option value="LPGA">LPGA</option>
+          <option value="PGA">PGA</option>
+          <option value="null">Not-listed</option>
+        </select>
+      </label> <br><br>
+
+      <h4>Sports:</h4> <br>
+      <div class="form-sports">
+        <label class="form-label" ng-repeat="game in games"for="">{{ game }}
+          <input class="form-radio" type="radio" name="sports" value="{{ game }}" ng-model="newProfile.sports">&nbsp;&nbsp;&nbsp;
+        </label> &nbsp; &nbsp; <br><br>
+
+        <label for="">
+          Gender &nbsp;
+          <select class="form-select" name="" ng-model="newProfile.gender">
+            <option value="select" disabled selected> Select an Option</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Non-conforming">Non-conforming</option>
+            <option value="Not-Listed">Not listed</option>
+          </select>
+        </label> <br><br>
+
+        <label for="form-select">
+          Nationality
+          <select class="" name="" ng-model="newProfile.nationality">
+            <option value="" disabled>Select a Country</option>
+            <option ng-repeat="country in countries" value="{{country}}">{{country}}</option>
+          </select>
+        </label><br><br>
+
+      </div>
+      <button type="button" name="button" ng-click="count = count + 1" ng-init="count=0">Count: {{count}}</button><br><br>
+
+      <label for="">
+        Profile Picture: <br>
+        <input type="file" name=""
+        file-model="newProfile.profileImage">
+      </label><br>
+      <button type="button" name="button" ng-click="saveFile(newProfile.profileImage)">Save File</button>
+
+      <br><br>
+      New Profile: {{newProfile }} <br>
+      Date: {{ newProfile.date_of_birth | date }}
+
+      <br>
+      <!-- <a href="#/profiles" class="btn btn-primary btn-sm" role="button">Back to profiles</a> -->
+      <!-- &nbsp; -->
+      <!-- <a href="#/create-profile/about" role="button">Next</a> -->
+      <!-- <button type="button" name="button" ng-click="profileInfo(newProfile)">Save Info</button> -->
+      <a href="#/profiles" role="button" class="btn btn-primary btn-sm">Back to profiles</a>
+      <button type="button" name="button" class="btn btn-primary btn-sm" ng-click="next(newProfile)">Next</button>
+      <!-- {{test}} -->
+
+    </div>
+  </div>
+</div>

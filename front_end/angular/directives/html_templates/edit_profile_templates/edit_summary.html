@@ -1,0 +1,38 @@
+<!-- Summary: show the athlete a wrap-up screen with the info they added, and give them a way to go back and edit if there are any mistake -->
+<div class="form-step container">
+  <div class="row">
+    <div class="col-lg-8 col-md-8 col-sm-10 col-xs-12">
+      <h3 class="text-center">{{editProfile.name}}'s Summary:</h3><br>
+      <!-- <br> -->
+      Name: &nbsp; {{ editProfile.name }} <br>
+      Sport: &nbsp; {{ editProfile.sports }} <br>
+      Nationality: &nbsp; {{ editProfile.nationality }} <br>
+      Gender: &nbsp; {{ editProfile.gender }} <br>
+      Date  &nbsp;of Birth: {{ editProfile.date_of_birth | date }} <br>
+      Description: &nbsp; {{ editProfile.description }} <br>
+      Location: &nbsp; {{ editProfile.location }} <br>
+      Team: &nbsp; {{ editProfile.team }} <br>
+      Social  &nbsp;Media Handles: <br>
+      Facebook: &nbsp; {{ editProfile.social_media_handles.facebook }} <br>
+      Twitter: &nbsp; {{ editProfile.social_media_handles.twitter }} <br>
+      Instagram: &nbsp; {{ editProfile.social_media_handles.instagram }} <br>
+      Youtube: &nbsp; {{ editProfile.social_media_handles.youtube }} <br>
+      Twitch: &nbsp; {{ editProfile.social_media_handles.twitch }} <br>
+      Snapchat: &nbsp; {{ editProfile.social_media_handles.snapchat }} <br>
+      Drinks  Alcohol?: &nbsp;{{ editProfile.drinks_alcohol }} <br>
+      Married? &nbsp;: {{ editProfile.married }} <br>
+      Pets? &nbsp;: {{ editProfile.pets }} <br>
+      <!-- Profile Picture: &nbsp; {{ editProfile.profileImage }} <br> -->
+
+      <!-- Edit Profile: {{ editProfile }} -->
+      <br>
+      <br>
+      <a href="#/profiles" role="button" class="btn btn-primary btn-sm">Back to profiles</a>
+      <button type="button" name="button" ng-click="editBack(editProfile)" class="btn btn-primary btn-sm">Back</button>
+      <button type="button" name="button" class="btn btn-primary btn-sm" ng-click="editNext(editProfile)">Next</button>
+      <button type="button" name="button" class="btn btn-success btn-sm" ng-click="submitChangedProfile()">Submit Changed Profile</button>
+
+    </div>
+
+  </div>
+</div>

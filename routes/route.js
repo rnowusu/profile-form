@@ -31,14 +31,14 @@ fileFilter: fileFilter
   const Profile = require('../models/profile.js');
 
   router.get('/profiles', function(req, res, next){
-    console.log("Params are ");
-    console.log(req.params);
     Profile.find(function(err, profiles){
       res.json(profiles);
     })
   });
 
   router.get('/profiles/:id', function(req, res, next){
+    console.log("Params are ");
+    console.log(req.params);
     // res.send('Enter your profile info here');
     Profile.findById(req.params.id, function(err, result){
       console.log("Params are ");
@@ -61,14 +61,14 @@ fileFilter: fileFilter
     date_of_birth: req.body.date_of_birth,
     nationality: req.body.nationality,
     location: req.body.location,
-    association: req.body.association, 
-    team: req.body.team, 
+    association: req.body.association,
+    team: req.body.team,
     gender: req.body.gender,
-    sports: req.body.sports, 
+    sports: req.body.sports,
     about: req.body.about,
     interests: req.body.interests,
     charities: req.body.charities,
-    social_media_handles: req.body.social_media_handles, 
+    social_media_handles: req.body.social_media_handles,
     pets: req.body.pets,
     drinks_alcohol: req.body.drinks_alcohol,
     married: req.body.married,

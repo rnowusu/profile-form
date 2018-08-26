@@ -68,14 +68,14 @@ fileFilter: fileFilter
     about: req.body.about,
     interests: req.body.interests,
     charities: req.body.charities,
-    social_media_handles: req.body.social_media_handles,
+    social_media_handles: req.body.social_media_handles, 
     pets: req.body.pets,
     drinks_alcohol: req.body.drinks_alcohol,
     married: req.body.married,
     profileImage: req.file.path
   });
-  // console.log(req.body);
-  // console.log(newProfile);
+  console.log(req.body.social_media_handles);
+  console.log(newProfile);
 
   newProfile.save(function(err, response){
     if(err){

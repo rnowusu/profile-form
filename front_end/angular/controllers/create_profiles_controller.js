@@ -4,6 +4,7 @@ application.controller('CreateProfilesController', ['$scope', '$routeParams', '$
 
   $scope.submitProfile = function(){
       // console.log('Submitting Profile');
+      console.log($scope.newProfile);
       createProfileService.multipartForm('/api/profiles', $scope.newProfile).then(function(data){
         // console.log("Profile post request got through.");
         console.log(data);

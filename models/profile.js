@@ -63,7 +63,8 @@ const ProfileSchema = mongoose.Schema({
   },
   profileImage: {
     type: String,
-    required: false
+    required: false,
+    default: 'uploads/2018-08-26T00:55:58.055Z_blank-profile-picture.png'
   }
 });
 

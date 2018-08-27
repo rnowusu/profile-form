@@ -4,7 +4,14 @@ application.controller('EditProfilesController', ['$scope', '$routeParams', '$lo
   $scope.changeProfile = editProfileService.editProfile('api/profiles/'+$routeParams.id).then(function(data){
     $scope.editProfile = data.data;
     $scope.editProfile.date_of_birth = new Date($scope.editProfile.date_of_birth)
-    console.log(data.data);
+    if(!($scope.editProfile.social_media_handles === '[object Object]')){
+      // console.log(profile.social_media_handles);
+      $scope.editProfile.social_media_handles = JSON.parse($scope.editProfile.social_media_handles)
+    } else {
+      $scope.editProfile.social_media_handles = {};
+  }
+    // console.log(data.data);
+    console.log($scope.editProfile);
     // console.log($routeParams);
   });
 

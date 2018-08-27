@@ -54,8 +54,6 @@ fileFilter: fileFilter
   });
 
   router.post('/profiles', upload.single('profileImage'), function(req, res, next){
-  console.log("File is :");
-  console.log(req.file);
   let newProfile = new Profile({
     name: req.body.name,
     date_of_birth: req.body.date_of_birth,
@@ -71,9 +69,14 @@ fileFilter: fileFilter
     social_media_handles: req.body.social_media_handles,
     pets: req.body.pets,
     drinks_alcohol: req.body.drinks_alcohol,
-    married: req.body.married,
-    profileImage: req.file.path
+    married: req.body.married//,
+    // profileImage: req.file.path
   });
+  if (req.file){
+    console.log("File is :");
+    console.log(req.file);
+    newProfile.profileImage = req.file.path;
+  }
 
   console.log("Social Media handles are :");
   console.log(req.body.social_media_handles);
@@ -97,7 +100,7 @@ fileFilter: fileFilter
 
 router.put('/profiles/edit/:id', upload.single('profileImage'), function(req, res, next){
   //put or patch request
-  Profile.findByIdAndUpdate({_id: req.params.id}, {
+  var changeProfile = {
     name: req.body.name,
     date_of_birth: req.body.date_of_birth,
     nationality: req.body.nationality,
@@ -112,9 +115,15 @@ router.put('/profiles/edit/:id', upload.single('profileImage'), function(req, re
     social_media_handles: req.body.social_media_handles,
     pets: req.body.pets,
     drinks_alcohol: req.body.drinks_alcohol,
-    married: req.body.married,
-    profileImage: req.file.path
-  }, function(err, result){
+    married: req.body.married//,
+    // profileImage: req.file.path
+  };
+  if (req.file){
+    console.log("File is :");
+    console.log(req.file);
+    changeProfile.profileImage = req.file.path;
+  }
+  Profile.findByIdAndUpdate({_id: req.params.id}, changeProfile, function(err, result){
     if(err){
       console.log("Failed to update");
       res.json(err);

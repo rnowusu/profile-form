@@ -68,13 +68,22 @@ fileFilter: fileFilter
     about: req.body.about,
     interests: req.body.interests,
     charities: req.body.charities,
-    social_media_handles: req.body.social_media_handles, 
+    social_media_handles: req.body.social_media_handles,
     pets: req.body.pets,
     drinks_alcohol: req.body.drinks_alcohol,
     married: req.body.married,
     profileImage: req.file.path
   });
+
+  console.log("Social Media handles are :");
   console.log(req.body.social_media_handles);
+  console.log('Stringified Social Media Handles are');
+  console.log(JSON.stringify(req.body.social_media_handles));
+  console.log("");
+  // console.log("Destringified is: ");
+  // console.log(JSON.parse(JSON.stringify(req.body.social_media_handles).json_decode));
+  console.log("");
+  console.log("New Profile is");
   console.log(newProfile);
 
   newProfile.save(function(err, response){

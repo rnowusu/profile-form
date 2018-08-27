@@ -10,7 +10,8 @@ application.controller('CreateProfilesController', ['$scope', '$routeParams', '$
         console.log(data);
         $location.url('/profiles')
       }, function(err){
-        console.log("Failed to submit post." + err);
+        console.log("Failed to submit post.");
+        console.log(err);
       })
     };
 

@@ -31,6 +31,10 @@ application.factory('createProfileService', ['$http', function($http){
     for (var key in data){
       fd.append(key, data[key]);
     }
+    fd.set('social_media_handles', JSON.stringify(data['social_media_handles']))
+    // console.log(data['social_media_handles']);
+    // console.log("Form Data is ");
+    // console.log(fd);
     return $http.post(url, fd, {
       transformRequest: angular.identity,
       headers: {'Content-Type': undefined }

@@ -41,6 +41,9 @@ application.factory('editProfileService', ['$http', function($http){
     for (var key in data){
       fd.append(key, data[key]);
     }
+
+    // fd.set('social_media_handles', JSON.stringify(data['social_media_handles']))
+
     return $http.put(url, fd, {
       transformRequest: angular.identity,
       headers: {'Content-Type': undefined }

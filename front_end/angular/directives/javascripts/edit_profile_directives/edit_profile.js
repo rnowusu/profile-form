@@ -1,5 +1,4 @@
 application.directive('editProfile', function(){
-  // console.log("Hello from edit_profile.js");
 
   return {
     restrict: 'E',

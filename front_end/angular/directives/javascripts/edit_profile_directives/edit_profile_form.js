@@ -1,5 +1,5 @@
 application.directive('editProfileForm', function(){
-console.log("Hi from edit-profile-form");
+
   return {
     restrict: 'E',
     scope: false,

@@ -1,5 +1,4 @@
 application.factory('editProfileService', ['$http', function($http){
-  console.log("Hello World from edit_profile.js");
 
   let Info = {};
   Info.editProfile = function(url, data){

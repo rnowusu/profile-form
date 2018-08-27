@@ -5,14 +5,14 @@ application.controller('EditProfilesController', ['$scope', '$routeParams', '$lo
     $scope.editProfile = data.data;
     $scope.editProfile.date_of_birth = new Date($scope.editProfile.date_of_birth)
     if(!($scope.editProfile.social_media_handles === '[object Object]')){
-      // console.log(profile.social_media_handles);
+
       $scope.editProfile.social_media_handles = JSON.parse($scope.editProfile.social_media_handles)
     } else {
       $scope.editProfile.social_media_handles = {};
   }
-    // console.log(data.data);
+
     console.log($scope.editProfile);
-    // console.log($routeParams);
+
   });
 
   $scope.submitChangedProfile = function(){
@@ -43,33 +43,33 @@ application.controller('EditProfilesController', ['$scope', '$routeParams', '$lo
   }
 
   $scope.editSwitch = $scope.editSwitch || "basic-info";
-    // console.log($scope.editSwitch);
+
 
     $scope.editNext = function(info){
       switch($scope.editSwitch) {
         case "basic-info":
             $scope.editSwitch = "about";
             $scope.editProfile = info;
-            // $location.url('/edit-profile/about');
+
           break;
 
 
           case "about":
              $scope.editSwitch = "social_media";
              $scope.editProfile = info;
-             // $location.url('/edit-profile/social_media');
+
             break;
 
             case "social_media":
             $scope.editSwitch = "summary";
             $scope.editProfile = info;
-            // $location.url('/edit-profile/summary');
+
             break;
 
           case "summary":
               $scope.editSwitch = "basic-info";
               $scope.editProfile = info;
-              // $location.url('/edit-profile/basic-info');
+
             break;
         default:
 
@@ -80,18 +80,15 @@ application.controller('EditProfilesController', ['$scope', '$routeParams', '$lo
       if($scope.editSwitch === "about"){
 
         $scope.editSwitch = "basic-info";
-        // $location.url('/edit-profile/basic-info');
 
       } else if($scope.editSwitch === "social_media"){
 
         $scope.editSwitch = "about";
-        // $location.url('/edit-profile/about');
 
       } else if ($scope.editSwitch === "summary") {
 
         $scope.editSwitch = "social_media";
-        // $location.url('/edit-profile/social_media');
-
+        
       }
     }
 

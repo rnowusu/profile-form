@@ -69,25 +69,11 @@ fileFilter: fileFilter
     social_media_handles: req.body.social_media_handles,
     pets: req.body.pets,
     drinks_alcohol: req.body.drinks_alcohol,
-    married: req.body.married//,
-    // profileImage: req.file.path
+    married: req.body.married
   });
   if (req.file){
-    console.log("File is :");
-    console.log(req.file);
     newProfile.profileImage = req.file.path;
   }
-
-  console.log("Social Media handles are :");
-  console.log(req.body.social_media_handles);
-  console.log('Stringified Social Media Handles are');
-  console.log(JSON.stringify(req.body.social_media_handles));
-  console.log("");
-  // console.log("Destringified is: ");
-  // console.log(JSON.parse(JSON.stringify(req.body.social_media_handles).json_decode));
-  console.log("");
-  console.log("New Profile is");
-  console.log(newProfile);
 
   newProfile.save(function(err, response){
     if(err){
@@ -115,8 +101,7 @@ router.put('/profiles/edit/:id', upload.single('profileImage'), function(req, re
     social_media_handles: req.body.social_media_handles,
     pets: req.body.pets,
     drinks_alcohol: req.body.drinks_alcohol,
-    married: req.body.married//,
-    // profileImage: req.file.path
+    married: req.body.married
   };
   if (req.file){
     console.log("File is :");

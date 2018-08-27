@@ -1,5 +1,3 @@
-// console.log("Hello from Countries.js");
-
 var countries = [
     "Afghanistan",
     "Albania",

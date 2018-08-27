@@ -1,4 +1,3 @@
-// console.log("Games");
 var games = [
   "Golf",
   "Tennis",

@@ -11,7 +11,7 @@
           Name: &nbsp;
         </label>
           <input class="form-control" type="text" name="" value="" ng-model="editProfile.name">
-        <!-- <br><br> -->
+
       </div>
 
       <div class="form-group">
@@ -20,8 +20,7 @@
           Sports: &nbsp; &nbsp; &nbsp;
         </label>
           <input class="form-control" type="text" name="" value="" ng-model="editProfile.sports">
-        <!-- <br><br> -->
-        <!-- <br><br> -->
+
       </div>
 
       <div class="form-group">
@@ -30,7 +29,7 @@
           Date of Birth: &nbsp;
         </label>
           <input class="form-control" type="date" name="" value="" placeholder="Enter in mm/dd/yyyy Format" ng-model="editProfile.date_of_birth">
-        <!-- <br><br> -->
+
       </div>
 
       <div class="form-group">
@@ -52,7 +51,7 @@
             <option value="null">Not-listed</option>
           </select>
         </label>
-        <!-- <br><br> -->
+
       </div>
 
       <div class="form-group">
@@ -83,25 +82,20 @@
         </div>
         <button type="button" name="button" ng-click="count = count + 1" ng-init="count=0">Count: {{count}}</button><br><br>
 
-        <!-- <label for="">
-          Edit Profile Picture: <br>
-          <input type="file" name="" value="" ng-model="editProfile.profileImage">
-        </label> -->
         <label for="">
           Edit Profile Picture: <br>
           <input type="file" name=""
           file-model="editProfile.profileImage">
         </label><br>
-        <br>
+        <!-- <br>
         New Profile: {{editProfile}} <br>
         Date: {{ editProfile.date_of_birth | date }}
-        <br>Profile Picture: {{editProfile.profileImage}}
+        <br>Profile Picture: {{editProfile.profileImage}} -->
 
         <br>
         <a href="#/profiles" role="button" class="btn btn-primary btn-sm">Back to profiles</a>
         &nbsp;
-        <!-- <a href="#/edit-profile/about" role="button">Next</a> -->
-        <!-- <button type="button" name="button" ng-click="profileInfo(editProfile)">Save Info</button> -->
+
         <button type="button" name="button" class=" btn btn-primary btn-sm" ng-click="editNext(editProfile)">Next</button>
 
     </div>

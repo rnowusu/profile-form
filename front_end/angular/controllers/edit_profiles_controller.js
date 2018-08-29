@@ -1,4 +1,3 @@
-console.log("Hello from edit profiles controller.js");
 application.controller('EditProfilesController', ['$scope', '$routeParams', '$location', 'editProfileService', function($scope, $routeParams, $location, editProfileService){
 
   $scope.changeProfile = editProfileService.editProfile('api/profiles/'+$routeParams.id).then(function(data){
@@ -9,9 +8,7 @@ application.controller('EditProfilesController', ['$scope', '$routeParams', '$lo
       $scope.editProfile.social_media_handles = JSON.parse($scope.editProfile.social_media_handles)
     } else {
       $scope.editProfile.social_media_handles = {};
-  }
-
-    console.log($scope.editProfile);
+      }
 
   });
 
@@ -36,7 +33,6 @@ application.controller('EditProfilesController', ['$scope', '$routeParams', '$lo
     }
 
     editProfileService.submitChangeWithFile('/api/profiles/edit/'+$routeParams.id, changed).then(function(data){
-      console.log(data.data);
       $location.url('/profiles')
     })
     console.log("Change submitted");
@@ -88,7 +84,7 @@ application.controller('EditProfilesController', ['$scope', '$routeParams', '$lo
       } else if ($scope.editSwitch === "summary") {
 
         $scope.editSwitch = "social_media";
-        
+
       }
     }
 

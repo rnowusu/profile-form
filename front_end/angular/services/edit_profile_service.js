@@ -4,7 +4,6 @@ application.factory('editProfileService', ['$http', function($http){
   Info.editProfile = function(url, data){
 
     return $http.get(url).success(function(data){
-      console.log(url);
       return data;
     }).error(function(err){
       return err;
@@ -14,7 +13,7 @@ application.factory('editProfileService', ['$http', function($http){
   Info.submitChange = function(url, data){
 
     let _data = data || {};
-    console.log('Put request submitted');
+    // console.log('Put request submitted');
 
     return $http.put(url, {
       name: _data.name,

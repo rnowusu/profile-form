@@ -1,5 +1,5 @@
 var application = angular.module("myApp", ['ngRoute', 'ngAnimate']);
-console.log("Hey from module.js");
+
 application.config(function($routeProvider, $locationProvider){
   $routeProvider.when('/profiles', {
     templateUrl: './angular/directives/html_templates/get_profiles.html',

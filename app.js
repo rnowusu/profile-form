@@ -33,6 +33,7 @@ app.get('/', function(req, res){
   res.send("Hello World");
 })
 
+//start request response cycle
 app.listen(5000, function(){
   console.log("Server started on Port 5000...");
 })

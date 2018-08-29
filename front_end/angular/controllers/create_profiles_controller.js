@@ -1,13 +1,8 @@
-console.log("Hello from create profile controller.js");
-
 application.controller('CreateProfilesController', ['$scope', '$routeParams', '$location', 'createProfileService', function($scope, $routeParams, $location, createProfileService){
 
   $scope.submitProfile = function(){
 
-      console.log($scope.newProfile);
       createProfileService.multipartForm('/api/profiles', $scope.newProfile).then(function(data){
-
-        console.log(data);
         $location.url('/profiles')
       }, function(err){
         console.log("Failed to submit post.");
@@ -25,7 +20,6 @@ application.controller('CreateProfilesController', ['$scope', '$routeParams', '$
             $scope.switch = "about";
             $scope.newProfile = info;
 
-            console.log($scope.switch);
           break;
 
 
@@ -33,21 +27,18 @@ application.controller('CreateProfilesController', ['$scope', '$routeParams', '$
              $scope.switch = "social_media";
              $scope.newProfile = info;
 
-             console.log($scope.switch);
             break;
 
             case "social_media":
-            $scope.switch = "summary";
-            $scope.newProfile = info;
-
-            console.log($scope.switch);
-            break;
+              $scope.switch = "summary";
+              $scope.newProfile = info;
+              
+              break;
 
           case "summary":
               $scope.switch = "basic-info";
               $scope.newProfile = info;
 
-              console.log($scope.switch);
             break;
         default:
 
@@ -58,7 +49,7 @@ application.controller('CreateProfilesController', ['$scope', '$routeParams', '$
       if($scope.switch === "about"){
 
         $scope.switch = "basic-info";
-        
+
       } else if($scope.switch === "social_media"){
 
         $scope.switch = "about";

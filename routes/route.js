@@ -1,38 +1,63 @@
 const express = require('express');
 const router = express.Router();
 const multer = require('multer');
-const storage = multer.diskStorage({
-  destination: function(req, file, cb){
-    cb(null, './uploads/');
-  },
-  filename: function(req, file, cb){
-    cb(null, new Date().toISOString()+ "_" +file.originalname)
-  }
-})
+
+const aws = require('aws-sdk');
+const multerS3 = require('multer-s3');
+
+aws.config.update({
+  secretAccessKey: '',
+  accessKeyId: '',
+  region: ''
+});
+
+// const storage = multer.diskStorage({
+//   destination: function(req, file, cb){
+//     cb(null, './uploads/');
+//   },
+//   filename: function(req, file, cb){
+//     cb(null, new Date().toISOString()+ "_" +file.originalname)
+//   }
+// })
 
 const fileFilter = function(req, file, cb){
-  if (file.mimetype === 'image/jpeg' || file.mimetype === 'image/png' || file.mimetype === 'image/jpg') {
+  if (file.mimetype === 'image/jpeg' || file.mimetype === 'image/png' || file.mimetype === 'image/jpg' || file.mimetype === 'image/gif') {
     cb(null, true);
   } else {
     cb(null, false);
   }
 }
 
+var s3 = new aws.S3();
+
 const upload = multer({
-  storage: storage,
+  storage: multerS3({
+    s3: s3,
+    bucket: 'profile-form-dev',
+    key: function(req, file, cb){
+      cb(null, new Date().toISOString()+ "_" +file.originalname)
+    }
+  }),
   limits: {
-  filesize: 1024 * 1024 * 7
-},
-fileFilter: fileFilter
+    filesize: 1024 * 1024 * 7
+  },
+  fileFilter: fileFilter
 });
 
-
+// const upload = multer({
+//   storage: storage,
+//   limits: {
+//   filesize: 1024 * 1024 * 7
+// },
+// fileFilter: fileFilter
+// });
 
   const Profile = require('../models/profile.js');
 
   router.get('/profiles', function(req, res, next){
     Profile.find(function(err, profiles){
       res.json(profiles);
+      // console.log(profiles);
     })
   });
 
@@ -46,9 +71,8 @@ fileFilter: fileFilter
       if(err){
         res.json(err)
       } else{
-        console.log(result);
+        // console.log(result);
         res.json(result);
-        // res.render('result', {first_name: result.first_name, last_name: result.last_name, phone: result.phone});
       }
     })
   });
@@ -72,9 +96,13 @@ fileFilter: fileFilter
     married: req.body.married
   });
   if (req.file){
-    newProfile.profileImage = req.file.path;
+    newProfile.profileImage = req.file.location;
+    console.log("Req.file is: ");
+    console.log(req.file);
   }
-
+  // console.log(newProfile);
+  // console.log("req is: ");
+  // console.log(req);
   newProfile.save(function(err, response){
     if(err){
       res.json({msg: "Failed to add to db: " + err});
@@ -122,6 +150,19 @@ router.put('/profiles/edit/:id', upload.single('profileImage'), function(req, re
   });
 });
 
+router.delete('/profiles/:id', function(req, res, next){
+  Profile.findByIdAndRemove({_id: req.params.id}, function(err, result){
+    if (err){
+      console.log("Failed to delete");
+      res.json(err);
+      console.log(err);
+    } else {
+      console.log("Deleted!");
+      // res.json(result);
+      // console.log(result);
+    }
+  })
+});
 
 
 module.exports = router;

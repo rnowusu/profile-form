@@ -37,6 +37,6 @@ app.get('/', function(req, res){
 })
 
 //start request response cycle
-app.listen(5000, function(){
-  console.log("Server started on Port 5000...");
+app.listen(process.env.PORT || 5000, function(){
+  // console.log("Server started on Port 5000...");
 })

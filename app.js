@@ -11,10 +11,11 @@ const route = require('./routes/route.js');
 var app = express();
 
 //db services
-mongoose.connect('mongodb://localhost:27017/profile_form');
+// mongoose.connect('mongodb://localhost:27017/profile_form');
+mongoose.connect(process.env.DB_URI);
 //change host number
 mongoose.connection.on('connected', function(){
-  console.log('Connected to database mongodb @ 27017');
+  console.log('Connected to database mongodb');
 });
 
 mongoose.connection.on('error', function(err){

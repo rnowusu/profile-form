@@ -62,12 +62,12 @@ const upload = multer({
   });
 
   router.get('/profiles/:id', function(req, res, next){
-    console.log("Params are ");
-    console.log(req.params);
+    // console.log("Params are ");
+    // console.log(req.params);
     // res.send('Enter your profile info here');
     Profile.findById(req.params.id, function(err, result){
-      console.log("Params are ");
-      console.log(req.params);
+      // console.log("Params are ");
+      // console.log(req.params);
       if(err){
         res.json(err)
       } else{
@@ -97,8 +97,8 @@ const upload = multer({
   });
   if (req.file){
     newProfile.profileImage = req.file.location;
-    console.log("Req.file is: ");
-    console.log(req.file);
+    // console.log("Req.file is: ");
+    // console.log(req.file);
   }
   // console.log(newProfile);
   // console.log("req is: ");
@@ -132,8 +132,8 @@ router.put('/profiles/edit/:id', upload.single('profileImage'), function(req, re
     married: req.body.married
   };
   if (req.file){
-    console.log("File is :");
-    console.log(req.file);
+    // console.log("File is :");
+    // console.log(req.file);
     changeProfile.profileImage = req.file.path;
   }
   Profile.findByIdAndUpdate({_id: req.params.id}, changeProfile, function(err, result){

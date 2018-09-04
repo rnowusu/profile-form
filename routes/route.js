@@ -6,10 +6,12 @@ const aws = require('aws-sdk');
 const multerS3 = require('multer-s3');
 
 aws.config.update({
-  secretAccessKey: '',
-  accessKeyId: '',
-  region: ''
+  secretAccessKey: process.env.SECRET_ACCESS_KEY,
+  accessKeyId: process.env.ACCESS_KEY_ID,
+  region: process.env.REGION
 });
+
+console.log("Region is", process.env.REGION);
 
 // const storage = multer.diskStorage({
 //   destination: function(req, file, cb){

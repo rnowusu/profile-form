@@ -11,8 +11,6 @@ aws.config.update({
   region: process.env.REGION
 });
 
-console.log("Region is", process.env.REGION);
-
 // const storage = multer.diskStorage({
 //   destination: function(req, file, cb){
 //     cb(null, './uploads/');

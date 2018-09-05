@@ -7,9 +7,11 @@
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.10/angular.min.js"></script>
     <script src="https://code.angularjs.org/1.5.0/angular-route.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-animate.js"></script>
-    <!-- Bootstrap  -->
+    <!-- Bootstrap/jquery/Fontawesome  -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <!-- Angular Module / Lists-->
     <script src="./angular/module.js" charset="utf-8"></script>
     <script src="./lists/countries.js" charset="utf-8"></script>
@@ -41,10 +43,38 @@
   </head>
   <body ng-app="myApp">
     <!-- Hello World! From index.html :) -->
+    <div class="card">
+        <div class="card-body bg-primary text-white text-center">
+          Profile Form: A simple Full-Stack application in the MEAN stack (angular.js) that allows users to upload a profile
+        </div>
+    </div>
+
     <div class="container">
 
       <ng-view></ng-view>
 
+    </div>
+
+    <div class="card">
+      <div class="card-header bg-info text-white text-center">
+        <span class="display-4">
+          Created by Ryan Owusu
+        </span>
+
+
+        <div class="container d-flex" style="list-style-type:none;">
+          <li class="card-body text-white display-4"><a style="color:white" target="_blank" class="linked" href="https://rnowusu.github.io/"><i class="fas fa-user-circle"></i></a></li>
+
+          <li class="card-body text-white display-4"><a style="color:white" target="_blank" class="linked" href="https://www.linkedin.com/in/ryan-owusu/"><i class="fab fa-linkedin-in"></i></a></li>
+
+          <li class="card-body text-white display-4"><a style="color:white" target="_blank" href="https://github.com/rnowusu"><i class="fab fa-github-square"></i></a></li>
+
+          <li class="card-body text-white display-4"><a style="color:white" target="_blank" href="https://rnowusu.github.io/documents/resume_pdf.pdf"><i class="fas fa-file-alt"></i></a></li>
+
+          <li class="card-body text-white display-4"><a style="color:white" target="_blank" href="https://angel.co/ryan-owusu"><i class="fab fa-angellist"></i></a></li>
+
+        </div>
+      </div>
     </div>
   </body>
 </html>

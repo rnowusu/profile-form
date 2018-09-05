@@ -134,18 +134,18 @@ router.put('/profiles/edit/:id', upload.single('profileImage'), function(req, re
   if (req.file){
     // console.log("File is :");
     // console.log(req.file);
-    changeProfile.profileImage = req.file.path;
+    changeProfile.profileImage = req.file.location;
   }
   Profile.findByIdAndUpdate({_id: req.params.id}, changeProfile, function(err, result){
     if(err){
-      console.log("Failed to update");
+      // console.log("Failed to update");
       res.json(err);
-      console.log(err);
+      // console.log(err);
     } else {
-      console.log("Update got through");
+      // console.log("Update got through");
       res.json(result);
-      console.log("Result is: ");
-      console.log(result);
+      // console.log("Result is: ");
+      // console.log(result);
     }
   });
 });

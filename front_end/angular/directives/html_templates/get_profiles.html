@@ -14,12 +14,17 @@
       </h3>
       <span class="profile-category"></span>Name: &nbsp; {{ profile.name }} <br>
       <span class="profile-category"></span>Sport: &nbsp; {{ profile.sports }} <br>
+      <span class="profile-category"></span>Association: &nbsp; {{ profile.association }} <br>
       <span class="profile-category"></span>Nationality: &nbsp; {{ profile.nationality }} <br>
       <span class="profile-category"></span>Gender: &nbsp; {{ profile.gender }} <br>
       <span class="profile-category"></span>Date  of Birth: &nbsp;{{ profile.date_of_birth | date }} <br>
       <span class="profile-category"></span>About: &nbsp; {{ profile.about }} <br>
+      <span class="profile-category"></span>Interests: &nbsp; {{ profile.interests }} <br>
       <span class="profile-category"></span>Location: &nbsp; {{ profile.location }} <br>
       <span class="profile-category"></span>Team: &nbsp; {{ profile.team }} <br>
+      <span class="profile-category"></span>Drinks  Alcohol?:&nbsp; {{ profile.drinks_alcohol }} <br>
+      <span class="profile-category"></span>Married?: &nbsp; {{ profile.married }} <br>
+      <span class="profile-category"></span>Pets?: &nbsp; {{ profile.pets }} <br><br>
       <span class="profile-category"></span>Social Media Handles: <br>
       <span class="profile-category" ng-hide="profile.social_media_handles.facebook == null">Facebook:&nbsp; {{ profile.social_media_handles.facebook }}<br> </span>
       <span class="profile-category" ng-hide="profile.social_media_handles.twitter == null">Twitter:&nbsp; {{ profile.social_media_handles.twitter }}<br> </span>
@@ -27,9 +32,7 @@
       <span class="profile-category" ng-hide="profile.social_media_handles.youtube == null">Youtube:&nbsp; {{ profile.social_media_handles.youtube }}<br> </span>
       <span class="profile-category" ng-hide="profile.social_media_handles.twitch == null">Twitch:&nbsp; {{ profile.social_media_handles.twitch }}<br> </span>
       <span class="profile-category" ng-hide="profile.social_media_handles.snapchat == null">Snapchat:&nbsp; {{ profile.social_media_handles.snapchat }}<br> </span>
-      <span class="profile-category"></span>Drinks  Alcohol?:&nbsp; {{ profile.drinks_alcohol }} <br>
-      <span class="profile-category"></span>Married?: &nbsp; {{ profile.married }} <br>
-      <span class="profile-category"></span>Pets?: &nbsp; {{ profile.pets }} <br><br>
+      <br>
       <a href="#/edit-profile/{{profile._id}}" class="btn btn-info btn-sm">Edit Profile</a>
 
 

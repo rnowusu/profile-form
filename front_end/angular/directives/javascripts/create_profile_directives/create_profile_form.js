@@ -1,5 +1,5 @@
 application.directive('createProfileForm', function(){
-console.log("Change all to create-profile-form");
+
   return {
     restrict: 'E',
     scope: false,

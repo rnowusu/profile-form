@@ -1,5 +1,4 @@
 application.directive('createAbout', function(){
-console.log('hey');
   return {
     restrict: 'E',
     scope: false,

@@ -57,21 +57,16 @@ const upload = multer({
   router.get('/profiles', function(req, res, next){
     Profile.find(function(err, profiles){
       res.json(profiles);
-      // console.log(profiles);
     })
   });
 
   router.get('/profiles/:id', function(req, res, next){
-    // console.log("Params are ");
-    // console.log(req.params);
     // res.send('Enter your profile info here');
     Profile.findById(req.params.id, function(err, result){
-      // console.log("Params are ");
-      // console.log(req.params);
+
       if(err){
         res.json(err)
       } else{
-        // console.log(result);
         res.json(result);
       }
     })
@@ -97,12 +92,8 @@ const upload = multer({
   });
   if (req.file){
     newProfile.profileImage = req.file.location;
-    // console.log("Req.file is: ");
-    // console.log(req.file);
   }
-  // console.log(newProfile);
-  // console.log("req is: ");
-  // console.log(req);
+
   newProfile.save(function(err, response){
     if(err){
       res.json({msg: "Failed to add to db: " + err});
@@ -132,8 +123,6 @@ router.put('/profiles/edit/:id', upload.single('profileImage'), function(req, re
     married: req.body.married
   };
   if (req.file){
-    // console.log("File is :");
-    // console.log(req.file);
     changeProfile.profileImage = req.file.location;
   }
   Profile.findByIdAndUpdate({_id: req.params.id}, changeProfile, function(err, result){
@@ -144,8 +133,7 @@ router.put('/profiles/edit/:id', upload.single('profileImage'), function(req, re
     } else {
       // console.log("Update got through");
       res.json(result);
-      // console.log("Result is: ");
-      // console.log(result);
+
     }
   });
 });

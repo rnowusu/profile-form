@@ -16,24 +16,36 @@
         <!-- <input type="text" name="" value="" placeholder="Talk about yourself" ng-model="newProfile.description"> -->
       </label> <br><br>
 
-      <label for="form-label">
-        Interests:
-        <input type="text" name="" value="" placeholder="Talk about yourself" ng-model="newProfile.interests">
-      </label> <br><br>
+      <div class="form-group">
+        <label for="form-label">
+          Interests:
+        </label>
+          <input type="text" name="" class="form-control" placeholder="Talk about yourself" ng-model="newProfile.interests">
+      </div>
+      <br><br>
 
-      <label for="form-label">
-        Charities:
-        <input type="text" name="" value="" placeholder="Talk about yourself" ng-model="newProfile.charities">
-      </label> <br><br>
+      <div class="form-group">
+        <label for="form-label">
+          Charities:
+        </label>
+        <input type="text" name="" class="form-control" placeholder="Talk about yourself" ng-model="newProfile.charities">
+      </div>
+       <br><br>
 
-      <label for="form-label">
-        Location:
-        <input type="text" name="" value="" placeholder="Enter your Location" ng-model="newProfile.location">
-      </label> <br> <br>
+       <div class="form-group">
+         <label for="form-label">
+           Location:
+         </label>
+           <input type="text" name="" class="form-control" placeholder="Enter your Location" ng-model="newProfile.location">
+       </div>
+       <br> <br>
 
-      <label for="">Team:
-        <input type="text" name="" value="" placeholder="Enter your Team" ng-model="newProfile.team">
-      </label> <br><br>
+       <div class="form-group">
+         <label for="">Team:
+         </label>
+         <input type="text" name="" class="form-control" placeholder="Enter your Team" ng-model="newProfile.team">
+       </div>
+      <br><br>
 
       <label for="">Pets: <br>
         true  <input type="radio" name="pets" ng-value="true" ng-model="newProfile.pets">

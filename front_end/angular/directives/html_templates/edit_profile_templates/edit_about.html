@@ -15,24 +15,37 @@
         <!-- <input type="text" name="" value="" placeholder="Talk about yourself" ng-model="editProfile.description"> -->
       </label> <br><br>
 
-      <label for="form-label">
-        Interests:
-        <input type="text" name="" value="" placeholder="Talk about yourself" ng-model="editProfile.interests">
-      </label> <br><br>
+      <div class="form-group">
+        <label for="form-label">
+          Interests:
+        </label>
+          <input type="text" name="" value="" placeholder="Talk about yourself" ng-model="editProfile.interests" class="form-control">
+      </div>
 
-      <label for="form-label">
-        Charities:
-        <input type="text" name="" value="" placeholder="Talk about yourself" ng-model="editProfile.charities">
-      </label> <br><br>
+      <br><br>
 
-      <label for="form-label">
-        Location:
-        <input type="text" name="" value="" placeholder="Enter your Location" ng-model="editProfile.location">
-      </label> <br> <br>
+      <div class="form-group">
+        <label for="form-label">
+          Charities:
+        </label>
+        <input type="text" name="" class="form-control" placeholder="Talk about yourself" ng-model="editProfile.charities">
+      </div>
+      <br><br>
 
-      <label for="">Team:
-        <input type="text" name="" value="" placeholder="Enter your Team" ng-model="editProfile.team">
-      </label> <br><br>
+      <div class="form-group">
+        <label for="form-label">
+          Location:
+        </label>
+        <input type="text" name="" class="form-control" placeholder="Enter your Location" ng-model="editProfile.location">
+      </div>
+      <br> <br>
+
+      <div class="form-group">
+        <label for="">Team:
+        </label>
+          <input type="text" name="" class="form-control" placeholder="Enter your Team" ng-model="editProfile.team">
+      </div>
+       <br><br>
 
       <label for="">Pets: <br>
         true  <input type="radio" name="pets" ng-value="true" ng-model="editProfile.pets">
